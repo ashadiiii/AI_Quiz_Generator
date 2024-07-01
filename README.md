@@ -1,9 +1,9 @@
-PDF Document Processor and Vector Store Creation
+#Gemini Quizify Mission
 
-Overview
+#Overview
 This project provides a comprehensive solution for processing PDF documents, extracting text, generating embeddings, and storing the data in a vector store for efficient querying. Additionally, the project leverages a Large Language Model (LLM) to generate quiz questions from the processed text, making it an excellent tool for educational purposes.
 
-Features
+#Features
 PDF Processing: Upload and process multiple PDF documents.
 
 Text Splitting: Split documents into smaller text chunks for efficient embedding.
@@ -16,10 +16,10 @@ Querying: Query the vector store to retrieve documents similar to a given query.
 
 Quiz Question Generation: Automatically generate quiz questions from the processed text using an LLM.
 
-Requirements
+#Requirements
 Python 3.8 or higher
 
-Required Python libraries:
+#Required Python libraries:
 streamlit ,
 langchain ,
 langchain_community , 
