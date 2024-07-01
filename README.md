@@ -20,8 +20,8 @@ Requirements
 Python 3.8 or higher
 
 Required Python libraries:
-streamlit
-langchain
-langchain_community
-chromadb
-re
+streamlit ,
+langchain ,
+langchain_community , 
+chromadb , 
+re 
