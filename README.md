@@ -26,7 +26,7 @@ Python 3.8 or higher
 - chromadb 
 - re
 
-##Aknowledgement
+## Aknowledgement
 - Streamlit
 - Langchain
 - Chroma
