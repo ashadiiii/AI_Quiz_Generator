@@ -16,10 +16,8 @@ This project provides a comprehensive solution for processing PDF documents, ext
 
 - Quiz Question Generation: Automatically generate quiz questions from the processed text using an LLM.
 
-## Requirements
-Python 3.8 or higher
 
-## Required Python libraries:
+## Required Python libraries
 - streamlit 
 - langchain 
 - langchain_community 
