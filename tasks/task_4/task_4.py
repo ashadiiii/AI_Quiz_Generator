@@ -33,9 +33,10 @@ class EmbeddingClient:
         # Initialize the VertexAIEmbeddings client with the given parameters
         # Read about the VertexAIEmbeddings wrapper from Langchain here
         # https://python.langchain.com/docs/integrations/text_embedding/google_generative_ai
-        self.client = VertexAIEmbeddings(
-            #### YOUR CODE HERE ####
-        )
+        self.model = model_name
+        self.project = project
+        self.location = location
+        self.client = VertexAIEmbeddings(model_name= self.model,project=self.project, location= self.location)
         
     def embed_query(self, query):
         """
@@ -55,14 +56,14 @@ class EmbeddingClient:
         :return: A list of embeddings for the given documents.
         """
         try:
-            return self.client.embed_documents(documents)
+            return self.client.embed_documents(documents,batch_size=0)
         except AttributeError:
             print("Method embed_documents not defined for the client.")
             return None
 
 if __name__ == "__main__":
     model_name = "textembedding-gecko@003"
-    project = "YOUR PROJECT ID HERE"
+    project = "trans-array-427509-h2"
     location = "us-central1"
 
     embedding_client = EmbeddingClient(model_name, project, location)

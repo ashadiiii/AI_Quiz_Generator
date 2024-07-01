@@ -1,6 +1,7 @@
 env/
 db/
 __pycache__/
+authentication.json
 application_key.json
 ai-data.json
 
