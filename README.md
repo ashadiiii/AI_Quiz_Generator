@@ -24,4 +24,10 @@ Python 3.8 or higher
 - langchain 
 - langchain_community 
 - chromadb 
-- re 
+- re
+
+##Aknowledgement
+- Streamlit
+- Langchain
+- Chroma
+- Large Language Model (LLM)
