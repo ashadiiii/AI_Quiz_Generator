@@ -26,11 +26,11 @@ class DocumentProcessor:
         temp_file_name = f"{original_name}_{unique_id}{file_extension}"
         temp_file_path = os.path.join(tempfile.gettempdir(), temp_file_name)
 
-        # Write the uploaded PDF to a temporary file
+        #uploaded PDF to a temporary file
         with open(temp_file_path, 'wb') as f:
             f.write(uploaded_file.getvalue())
 
-        # Step 2: Process the temporary file
+        # Process the temporary file
         pdf_pages = []
         try:
             pdf_loader = PyPDFLoader(temp_file_path)
@@ -48,7 +48,7 @@ class DocumentProcessor:
         Renders a file uploader in a Streamlit app, processes uploaded PDF files,
         extracts their pages, and updates the self.pages list with the total number of pages.
         """
-        # Step 1: Render a file uploader widget
+        # Render a file uploader widget
         uploaded_files = st.file_uploader('Upload your files.', type=['pdf'], accept_multiple_files=True)
         
         if uploaded_files:
