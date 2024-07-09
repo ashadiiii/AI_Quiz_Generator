@@ -109,13 +109,6 @@ class QuizGenerator:
 
         This method orchestrates the quiz generation process by utilizing the `generate_question_with_vectorstore` method to generate each question and the `validate_question` method to ensure its uniqueness before adding it to the quiz.
 
-        Steps:
-            1. Initialize an empty list to store the unique quiz questions.
-            2. Loop through the desired number of questions (`num_questions`), generating each question via `generate_question_with_vectorstore`.
-            3. For each generated question, validate its uniqueness using `validate_question`.
-            4. If the question is unique, add it to the quiz; if not, attempt to generate a new question (consider implementing a retry limit).
-            5. Return the compiled list of unique quiz questions.
-
         Returns:
         - A list of dictionaries, where each dictionary represents a unique quiz question generated based on the topic.
 
@@ -125,19 +118,14 @@ class QuizGenerator:
         question_count = 0
 
         while question_count!=self.num_questions:
-            ##### YOUR CODE HERE #####
             question_str = self.generate_question_with_vectorstore()
-            
-            ##### YOUR CODE HERE #####
             try:
                 # Convert the JSON String to a dictionary
                 question_dict = json.loads(question_str)
             except json.JSONDecodeError:
                 print("Failed to decode question JSON.")
                 continue  # Skip this iteration if JSON decoding fails
-            ##### YOUR CODE HERE #####
-
-            ##### YOUR CODE HERE #####
+          
             # Validate the question using the validate_question method
             if self.validate_question(question_dict):
                 print("Successfully generated unique question")
@@ -146,7 +134,7 @@ class QuizGenerator:
                 # Add the valid and unique question to the bank
             else:
                 print("Duplicate or invalid question detected.")
-            ##### YOUR CODE HERE #####
+
         return self.question_bank
 
     def validate_question(self, question: dict) -> bool:
@@ -154,12 +142,6 @@ class QuizGenerator:
         Task: Validate a quiz question for uniqueness within the generated quiz.
 
         This method checks if the provided question (as a dictionary) is unique based on its text content compared to previously generated questions stored in `question_bank`. The goal is to ensure that no duplicate questions are added to the quiz.
-
-        Steps:
-            1. Extract the question text from the provided dictionary.
-            2. Iterate over the existing questions in `question_bank` and compare their texts to the current question's text.
-            3. If a duplicate is found, return False to indicate the question is not unique.
-            4. If no duplicates are found, return True, indicating the question is unique and can be added to the quiz.
 
         Parameters:
         - question: A dictionary representing the generated quiz question, expected to contain at least a "question" key.
@@ -169,7 +151,7 @@ class QuizGenerator:
 
         Note: This method assumes `question` is a valid dictionary and `question_bank` has been properly initialized.
         """
-        ##### YOUR CODE HERE #####
+
         # Consider missing 'question' key as invalid in the dict object
         # Check if a question with the same text already exists in the self.question_bank
         is_unique = True
