@@ -14,22 +14,11 @@ class EmbeddingClient:
         self.client = VertexAIEmbeddings(model_name= self.model,project=self.project, location= self.location)
         
     def embed_query(self, query):
-        """
-        Uses the embedding client to retrieve embeddings for the given query.
-
-        :param query: The text query to embed.
-        :return: The embeddings for the query or None if the operation fails.
-        """
         vectors = self.client.embed_query(query)
         return vectors
     
     def embed_documents(self, documents):
-        """
-        Retrieve embeddings for multiple documents.
 
-        :param documents: A list of text documents to embed.
-        :return: A list of embeddings for the given documents.
-        """
         try:
             return self.client.embed_documents(documents,batch_size=0)
         except AttributeError:
